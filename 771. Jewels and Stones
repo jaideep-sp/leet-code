@@ -1,0 +1,42 @@
+class Solution {
+public:
+    int numJewelsInStones(string jewels, string stones) {
+        int sj=jewels.size();
+        int ss=stones.size();
+        int count(0);
+        string s;
+        vector<string> st;
+        vector<string> sts;
+        for (int i = 0; i < sj; i++)
+        {
+            s=jewels.substr(i,1);
+            st.push_back(s);
+        }
+         for (int i = 0; i < ss; i++)
+        {
+            s=stones.substr(i,1);
+            sts.push_back(s);
+        }
+      for (int i = 0; i < sts.size(); i++)
+      {
+           for (int j = 0; j < st.size(); j++)
+        {
+           if(st[j] == sts[i]){  
+                count++; 
+           }
+        }    
+      }
+        return count;
+        
+        
+    }
+};
+
+
+/*
+Runtime: 0 ms, faster than 100.00% of C++ online submissions for Jewels and Stones.
+Memory Usage: 7.1 MB, less than 7.13% of C++ online submissions for Jewels and Stones.
+
+
+
+*/
