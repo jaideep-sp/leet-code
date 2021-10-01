@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int countMatches(vector<vector<string>>& items, string ruleKey, string ruleValue) {
+        int count(0);
+        int s=items.size();
+        for(int i=0; i<s; i++){
+            if(ruleKey == "type"  && items[i][0]==ruleValue) count++;
+           
+             else if(ruleKey == "color"  && items[i][1]==ruleValue) count++;
+           
+              if(ruleKey == "name"  && items[i][2]==ruleValue) count++;            
+        }
+        return count;
+    }
+};
+
+
+
+/*
+Runtime: 72 ms, faster than 70.11% of C++ online submissions for Count Items Matching a Rule.
+Memory Usage: 30.9 MB, less than 41.67% of C++ online submissions for Count Items Matching a Rule.
+
+*/
