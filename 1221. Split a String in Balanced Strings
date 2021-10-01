@@ -2,17 +2,17 @@ class Solution {
 public:
     int balancedStringSplit(string s) {
         int si=s.size();
-        int c(0),lc(0),rc(0);
+        int a(0),c(0);
         for(int i=0; i<si; i++){
-            if(s[i]=='L')lc++; 
-            else rc++;      
-            if(lc==rc)c++;
+            if(s[i]=='L')c++; 
+            if(s[i]=='R')c--;      
+            if(c==0)a++;
         }
-        return c;
+        return a;
     }
 };
 
 /*
- Runtime: 9 ms, faster than 6.98% of C++ online submissions for Split a String in Balanced Strings.
-Memory Usage: 6.3 MB, less than 40.07% of C++ online submissions for Split a String in Balanced Strings.
+Runtime: 0 ms, faster than 100.00% of C++ online submissions for Split a String in Balanced Strings.
+Memory Usage: 6.2 MB, less than 82.60% of C++ online submissions for Split a String in Balanced Strings.
 */
